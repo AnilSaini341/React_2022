@@ -22,9 +22,11 @@ function App() {
     //   </header>
     // </div>
     <div>
+      <Man number="1" />
       <Person name="Anil" age="29" />
+      <Man number="2" />
       <Person name="Saini" age="31" />
-      <Man />
+      <Man number="3" />
     </div>
   );
 }

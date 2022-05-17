@@ -7,6 +7,7 @@ class Person extends Component {
         this.props=props
     }
     render(){
+        console.log(this.props);
         return(
             <div className="text-center">
             <h2>Hi, {this.props.name} , Age:{this.props.age} Years</h2>
