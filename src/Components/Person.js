@@ -2,12 +2,16 @@ import React,{ Component } from "react";
 import {Man} from './Man';
 
 class Person extends Component {
+    constructor(props){
+        super(props);
+        this.props=props
+    }
     render(){
         return(
-            <div>
-            <div>Name:Anil Saini</div>
-            <div>Age:30 Years</div> <br></br>
-            <Man />
+            <div className="text-center">
+            <h2>Hi, {this.props.name} , Age:{this.props.age} Years</h2>
+           
+            {/* <Man /> */}
             </div>
         )
     }
