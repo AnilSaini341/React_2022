@@ -1,6 +1,6 @@
 import React from "react";
 
-function Man(){
+const Man=()=>{
     return(
         <h1>Hey, I am Anil Saini.</h1>
     )
