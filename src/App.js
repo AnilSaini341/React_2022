@@ -2,6 +2,7 @@
 //import './App.css';
 import Person from './Components/Person';
 import {Man} from './Components/Man';
+import Maps from './Components/Maps';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Man number="2" />
       <Person name="Saini" age="31" />
       <Man number="3" />
+      <Maps />
     </div>
   );
 }
