@@ -27,10 +27,16 @@ class Maps extends Component{
                 age:"32"
             },
         ],
+        isShow: true,
     };
 
-    }
+    this.toggleHandler= this.toggleHandler.bind(this); //Binding Event Method
 
+    }
+    toggleHandler(){
+        //alert("hi");
+        this.setState({isShow:!this.state.isShow});
+    }
 
     render() {
         let persons;
@@ -41,7 +47,11 @@ class Maps extends Component{
             
             )
         });
-        return (<>{persons}</>)
+        //console.log(this.state.isShow);
+        return (
+        <>
+        <button onClick={this.toggleHandler}>Toggle List</button>
+        { this.state.isShow === true ? persons : ""}</>)
       }
 
 }
