@@ -40,18 +40,22 @@ class Maps extends Component{
 
     render() {
         let persons;
-        persons=this.state.persons.map((person, index) =>{
-            return(
-            
-                <h3 key={index}>S.No:- {index} | {person.name}, Age:{person.age}</h3>
-            
-            )
-        });
+        if(this.state.isShow){
+            persons=this.state.persons.map((person, index) =>{
+                return(
+                    <h3 key={index}>S.No:- {index} | {person.name}, Age:{person.age}</h3>
+                )
+            });
+        }
+        else{
+            persons ="";
+        }
+        
         //console.log(this.state.isShow);
         return (
         <>
         <button onClick={this.toggleHandler}>Toggle List</button>
-        { this.state.isShow === true ? persons : ""}</>)
+        { persons }</>)
       }
 
 }
