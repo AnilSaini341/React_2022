@@ -33,12 +33,15 @@ class Maps extends Component{
 
 
     render() {
-        const data = this.state.persons;
-        return data.map((person, index) => (
-          <div key={index}>
-              <h3>S.no- {index}- Name: {person.name}, Age: {person.age}</h3>
-          </div>
-        ));
+        let persons;
+        persons=this.state.persons.map((person, index) =>{
+            return(
+            
+                <h3 key={index}>S.No:- {index} | {person.name}, Age:{person.age}</h3>
+            
+            )
+        });
+        return (<>{persons}</>)
       }
 
 }
