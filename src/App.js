@@ -4,6 +4,7 @@ import Person from './Components/Person';
 import {Man} from './Components/Man';
 import Maps from './Components/Maps';
 import Form from './Components/Form';
+import ControlledComponent from './Components/ControlledComponent';
 function App() {
   return (
     // <div className="App">
@@ -30,6 +31,7 @@ function App() {
       <Man number="3" />
       <Maps />
       <Form />
+      <ControlledComponent />
     </div>
   );
 }
