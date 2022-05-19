@@ -38,12 +38,23 @@ class Maps extends Component{
         this.setState({isShow:!this.state.isShow});
     }
 
+    removeHandler = (personIndex)=>{
+        //alert(copyIndex);
+        const copyPersons= this.state.persons;
+        //console.log(copyPersons);
+        //console.log(copyPersons[personIndex]);
+        copyPersons.splice(personIndex,1);  //Remove data with indexing and what data to remove
+       // console.log(copyPersons);
+       this.setState({persons:copyPersons});
+
+    }
+
     render() {
         let persons;
         if(this.state.isShow){
             persons=this.state.persons.map((person, index) =>{
                 return(
-                    <h3 key={index}>S.No:- {index} | {person.name}, Age:{person.age}</h3>
+                    <h3 key={index}>S.No:- {index} | {person.name}, Age:{person.age} <button onClick={()=>this.removeHandler(index)}>Remove</button></h3>
                 )
             });
         }
