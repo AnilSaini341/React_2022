@@ -3,7 +3,7 @@
 import Person from './Components/Person';
 import {Man} from './Components/Man';
 import Maps from './Components/Maps';
-
+import Form from './Components/Form';
 function App() {
   return (
     // <div className="App">
@@ -29,6 +29,7 @@ function App() {
       <Person name="Saini" age="31" />
       <Man number="3" />
       <Maps />
+      <Form />
     </div>
   );
 }
