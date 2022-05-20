@@ -13,6 +13,7 @@ class Appnew extends Component {
             name:null,
             email:null,
             password:null,
+            showPass:false,
         };
     }
 
@@ -25,6 +26,12 @@ class Appnew extends Component {
 
         });
     }
+    showPasswordHandler = () =>{
+        console.log(this.state);
+        this.setState({showPass: !this.state.showPass},()=>{
+            console.log(this.state);
+        });
+    }
 
     render() {
         return (
@@ -32,7 +39,11 @@ class Appnew extends Component {
                 {
                 this.state.isRegister 
                 ? <Greeting name={this.state.name} email={this.state.email}/> 
-                : <Register submit={this.registrationSubmit} />
+                : <Register 
+                submit={this.registrationSubmit} 
+                showPass={this.state.showPass} 
+                click={this.showPasswordHandler}
+                />
                 }
             </div>
         );
