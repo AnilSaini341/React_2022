@@ -33,9 +33,18 @@ function Register(props) {
     width:100%;
     border-radius:4px;
     `;
+    const MainConatiner=Styled.div`
+    width:550px;
+    &:hover{
+        box-shadow:0px 0px 5px grey;
+    }
+    @media(min-width:0px) and (max-width:600px){
+        width:320px !important;
+    }
+    `;
         
     return (
-        <div className='container card p-3 mt-3 register-container'>
+        <MainConatiner className='container card p-3 mt-3 register-container'>
             <form onSubmit={props.submit}>
                 <h3 className='text-center'>Registration Form</h3>
                 <div className='form-group'>
@@ -58,7 +67,7 @@ function Register(props) {
                 <StyledButton type='button'>login</StyledButton>
                 <StyledButton type='button'>Term & Coditions</StyledButton>
             </form>
-        </div>
+        </MainConatiner>
     );
 }
 
