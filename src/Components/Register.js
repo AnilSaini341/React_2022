@@ -24,13 +24,13 @@ function Register(props) {
     //console.log(btnClasses);
 
     const StyledButton=Styled.button`
-    display:block;
+    display:${props=>props.flag ==="1" ? "display-inline" : "block"};;
     padding:8px 7px;
-    background-color:#f44336;
+    background-color:${props=>props.bgcolor};
     color:white;
     border:none;
     margin:4px;
-    width:100%;
+    width:${props=>props.flag ==="1" ? "48.2%" : "100%"};
     border-radius:4px;
     `;
     const MainConatiner=Styled.div`
@@ -44,7 +44,7 @@ function Register(props) {
     `;
         
     return (
-        <MainConatiner className='container card p-3 mt-3 register-container'>
+        <div className='container card p-3 mt-3 register-container'>
             <form onSubmit={props.submit}>
                 <h3 className='text-center'>Registration Form</h3>
                 <div className='form-group'>
@@ -64,10 +64,11 @@ function Register(props) {
                 {/* <button type='button' className='btn m-1' onClick={props.click} style={btnStyle} >{showBtnText}</button> */}
                 <button type='button' className={btnClasses.join(" ")} onClick={props.click} >{showBtnText}</button>
                 </div>
-                <StyledButton type='button'>login</StyledButton>
-                <StyledButton type='button'>Term & Coditions</StyledButton>
+                <StyledButton type='button' flag="1" bgcolor="orange">login</StyledButton>
+                <StyledButton type='button' flag="1" bgcolor="green">Login With Google</StyledButton>
+                <StyledButton type='button' flag="0" bgcolor="blue">Login With Facebook</StyledButton>
             </form>
-        </MainConatiner>
+        </div>
     );
 }
 
