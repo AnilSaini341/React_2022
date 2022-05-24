@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Appnew from './Components/Appnew';
+// import App from './App';
+// import Appnew from './Components/Appnew';
+import Appme from './Components/Appme';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Appnew />
+    {/* <Appnew /> */}
+   <Appme /> 
+
   </React.StrictMode>
 );
 
