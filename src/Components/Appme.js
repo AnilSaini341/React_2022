@@ -25,9 +25,12 @@ function Appme(props) {
                 <Header title="Contact" subtitle="Contact Page Sub"/>
                 <Contact pagename="Contact Us" />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
                 <Header title="Home" subtitle="Home Page Sub"/>
                 <Homepage pagename="Home Page" />
+            </Route>
+            <Route path="*">
+                <div className='text-center p-5'><h2>Page Not Found.</h2></div>
             </Route>
         </Switch>
         <Footer />
