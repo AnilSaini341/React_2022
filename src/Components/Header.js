@@ -2,8 +2,9 @@ import React from 'react';
 
 function Header(props) {
     return (
-        <div>
-            <h2>This is App Header</h2>
+        <div className='mt-3'>
+            <h2 className='text-center'>{props.title}</h2>
+            <p className='text-center'>{props.subtitle}</p>
         </div>
     );
 }

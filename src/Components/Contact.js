@@ -9,7 +9,7 @@ function Contact(props) {
                 <div className="top-box">
                     <div className="content-box">
                         <h1>
-                            Contact Page
+                           {props.pagename}
                         </h1>
                         <p>
                         For businesses, contact forms ensure security, accuracy, and engagement. Not to mention a golden opportunity to increase your mailing list with qualified leads, building your audience. 

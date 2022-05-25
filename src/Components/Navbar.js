@@ -1,26 +1,27 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+  <Link className="navbar-brand" to="/">Navbar</Link>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
+      <li className="nav-item active">
+        <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+      <li className="nav-item">
+        <Link className="nav-link" to="/about">About</Link>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Courses</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+      {/* <li className="nav-item">
+        <Link className="nav-link" to="/">Courses</Link>
+      </li> */}
+      <li className="nav-item">
+        <Link className="nav-link" to="/contact">Contact</Link>
       </li>
       
     </ul>
