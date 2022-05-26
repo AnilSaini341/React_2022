@@ -11,6 +11,7 @@ import Homepage from './Homepage';
 import About from './About';
 import Contact from './Contact';
 import Header from './Header';
+import DummyUsers from './DummyUsers';
 
 function Appme(props) {
     return (
@@ -24,6 +25,10 @@ function Appme(props) {
             <Route path="/contact">
                 <Header title="Contact" subtitle="Contact Page Sub"/>
                 <Contact pagename="Contact Us" />
+            </Route>
+            <Route exact path="/dummyuser">
+                <Header title="Dummy Users" subtitle="Dummy Page Sub"/>
+                <DummyUsers pagename="Home Page" />
             </Route>
             <Route exact path="/">
                 <Header title="Home" subtitle="Home Page Sub"/>
