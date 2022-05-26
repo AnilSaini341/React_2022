@@ -11,7 +11,7 @@ class DummyUsers extends Component {
     }
 
     componentDidMount(){
-        axios.get("https://jsonplaceholder.typicode.com/posts")
+        axios.get("posts")
         .then((response)=>{
             // console.log(response.data);
             this.setState({posts:response.data},()=>
@@ -24,7 +24,7 @@ class DummyUsers extends Component {
 
     deleteHandler = (id) => {
         // alert(id);
-        axios.delete("https://jsonplaceholder.typicode.com/posts/"+id)
+        axios.delete("posts/"+id)
         .then((response)=>{
              console.log(response);
             })
