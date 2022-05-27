@@ -18,6 +18,9 @@ function Navbar(props) {
         <Link className="nav-link" to="/about">About</Link>
       </li>
       <li className="nav-item">
+        <Link className="nav-link" to="/createpost">Create Post</Link>
+      </li>
+      <li className="nav-item">
         <Link className="nav-link" to="/dummyuser">Dummy Users</Link>
       </li>
       <li className="nav-item">
