@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 // import Appnew from './Components/Appnew';
-import Appme from './Components/Appme';
+// import Appme from './Components/Appme';
+import Appweather from './Components/Appweather';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
@@ -17,7 +18,8 @@ root.render(
     {/* <Appnew /> */}
    {/* <Appme />  */}
    <BrowserRouter>
-        <Appme/>
+        {/* <Appme/> */}
+        <Appweather />
       </BrowserRouter>
 
   </React.StrictMode>
