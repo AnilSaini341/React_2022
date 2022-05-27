@@ -5,7 +5,7 @@ import './index.css';
 // import Appnew from './Components/Appnew';
 import Appme from './Components/Appme';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 axios.defaults.baseURL ="https://jsonplaceholder.typicode.com/";
 axios.defaults.headers.common["AUTHORIZATION"] ="AUTH_TOKEN";
@@ -15,7 +15,10 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Appnew /> */}
-   <Appme /> 
+   {/* <Appme />  */}
+   <BrowserRouter>
+        <Appme/>
+      </BrowserRouter>
 
   </React.StrictMode>
 );

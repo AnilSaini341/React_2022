@@ -36,32 +36,28 @@ class DummyUsers extends Component {
     render() {
         let posts;
         if(this.state.posts!=null){
-            posts=this.state.posts.map((post, index) =>{
-                return(
-                    // <h3 key={index}>S.No:- {index} | {post.title}, Age:{post.body} </h3>
-                    <table className="table table-bordered">
-                    <thead>
+            return (<table className="table table-bordered">
+                   <thead>
                       <tr>
                         <th>S. No</th>
-                        <th>UserId</th>
-                        <th>Title</th>
-                        <th>Info</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr key={index}>
-                        <td>{post.id}</td>
-                        <td>{post.userId}</td>
-                        <td>{post.title}</td>
-                        <td>{post.body}</td>
-                        <td><button type="button" className='btn btn-danger' 
-                        onClick={()=>this.deleteHandler(post.id)}>Delete</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                )
-            });
+                         <th>UserId</th>
+                         <th>Title</th>
+                         <th>Info</th>
+                         <th>Actions</th>
+                   </tr>
+                     </thead>
+                     <tbody>
+                { posts=this.state.posts.map((post, index) =>   (
+                    <tr key={index}>
+                                 <td>{post.id}</td>
+                                 <td>{post.userId}</td>
+                                 <td>{post.title}</td>
+                                 <td>{post.body}</td>
+                                 <td><button type="button" className='btn btn-danger' 
+                                 onClick={()=>this.deleteHandler(post.id)}>Delete</button></td>
+                               </tr>
+                )) } 
+                </tbody></table>);
         }
         else{
             posts =<h3 className='text-center m-5'>No Records Found</h3>;
