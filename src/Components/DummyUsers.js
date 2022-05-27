@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
+// import axios from 'axios';
+import axios from '../Services/Instance';
 class DummyUsers extends Component {
 
     constructor(props){
