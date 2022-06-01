@@ -35,7 +35,7 @@ function SearchWeather(props) {
 
             <div className='col-lg-1'>
                 <label htmlFor=''>Search</label>
-                <button className='btn btn-primary fa fa-search'></button>
+                <button className='btn btn-primary fa fa-search' onClick={props.search}></button>
             </div>
 
 

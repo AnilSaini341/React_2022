@@ -8,8 +8,8 @@ import Appweather from './Components/Appweather';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
-axios.defaults.baseURL ="https://jsonplaceholder.typicode.com/";
-axios.defaults.headers.common["AUTHORIZATION"] ="AUTH_TOKEN";
+// axios.defaults.baseURL ="https://jsonplaceholder.typicode.com/";
+// axios.defaults.headers.common["AUTHORIZATION"] ="AUTH_TOKEN";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
