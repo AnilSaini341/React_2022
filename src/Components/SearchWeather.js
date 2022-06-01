@@ -8,7 +8,7 @@ function SearchWeather(props) {
             <div className='col-lg-5'>
             <div className="form-group">
             <label htmlFor="city">City Name:</label>
-            <input required type="text" className="form-control" id="city" name="city" placeholder='Enter City Name'></input>
+            <input required type="text" className="form-control" id="city" name="city" placeholder='Enter City Name' value={props.city} onChange={props.change} />
             </div>
             </div>
 
@@ -20,14 +20,14 @@ function SearchWeather(props) {
             <div className='col-lg-5'>
             <div className="form-group">
             <label htmlFor="city">Go-Coordinates</label>
-            <button className='btn fa fa-crosshairs'></button>
+            <button className='btn fa fa-crosshairs' onClick={props.getLocation}></button>
             <div className='row'>
                 <div className='latitude col-md-6'>
                 <div className='bg-dark text-white rounded pt-1 pl-1 pr-1 col-lg-3'>Lat:</div>
-            <input type="number" step="any" className="form-control col-lg-9" id="lat" name="lat" placeholder='' /></div>
+            <input type="number" step="any" className="form-control col-lg-9" id="lat" name="lat" placeholder='' value={props.lat} onChange={props.change} /></div>
             <div className='longitute col-md-6'>
             <div className='bg-dark text-white rounded pt-1 pl-1 pr-1 col-lg-3'>Long:</div>
-            <input type="number" step="any" className="form-control col-lg-9" id="long" name="long" placeholder='' />
+            <input type="number" step="any" className="form-control col-lg-9" id="long" name="long" placeholder='' value={props.long} onChange={props.change} />
             </div>
             </div>
             </div>
