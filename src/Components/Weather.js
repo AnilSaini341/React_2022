@@ -25,7 +25,8 @@ class Weather extends Component {
             city:this.state.city,
         });
         this.setState({ recent },()=>{
-            console.log(this.state);
+            //console.log(this.state);
+            window.localStorage.setItem('recent',JSON.stringify(this.state.recent)); // JSON.stringify converts object data as string.
         });
     }
 
@@ -131,6 +132,13 @@ class Weather extends Component {
         })
         
     };
+
+    componentDidMount(){
+        const data= window.localStorage.getItem("recent");
+        //console.log(JSON.parse(data));  //JSON.parse() method convert string to poject
+        let recent = data ===null ? [] :JSON.parse(data);
+        this.setState({recent});
+    }
 
     render() {
         return (

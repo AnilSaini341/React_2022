@@ -33,13 +33,33 @@ function ReasultWeather(props) {
             </div>
             </div>
         }else{
+            let rdata;
+            if(props.recent==null){
+                rdata=""
+            }
+            else{
+                rdata=props.recent.map((recentdata,index)=>{
+                    return <li onClick={()=>props.research(recentdata.lat,recentdata.long)} key={index} style={{cursor:"pointer"}}>{recentdata.city}</li>
+                });
+            }
             
-            showonPage=  <div className='col mt-4'>
+            showonPage=  <div className='container mt-5 mb-5'>
+            <div className='row'>
+            <div className='col-4 pb-3'>
+                <div className='card border-primary'>
+                <h4 className='text-center pt-2'>Recent Search</h4>
+                <ul className='list-unstyled text-center'>{rdata}</ul>
+            </div>
+            </div>
+            <div className='col-8'>
+
                 <div className='card border-primary'>
                     <div className='card-body'>
                          <h4 className='text-center'>Please Search a City</h4>
                          </div>
                          </div>
+            </div>
+            </div>
             </div>
         }
 
@@ -57,7 +77,7 @@ function ReasultWeather(props) {
             <div className='row'>
             <div className='col-4 pb-3'>
                 <div className='card border-primary'>
-                <h4 className='text-center'>Recent</h4>
+                <h4 className='text-center pt-2'>Recent Search</h4>
                 <ul className='list-unstyled text-center'>{rdata}</ul>
             </div>
             </div>
