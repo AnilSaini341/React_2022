@@ -50,7 +50,7 @@ function ReasultWeather(props) {
             }
             else{
                 rdata=props.recent.map((recentdata,index)=>{
-                    return <li key={index}>{recentdata.city}</li>
+                    return <li onClick={()=>props.research(recentdata.lat,recentdata.long)} key={index} style={{cursor:"pointer"}}>{recentdata.city}</li>
                 });
             }
         showonPage=  <div className='container mt-5 mb-5'>

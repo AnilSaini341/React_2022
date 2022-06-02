@@ -112,6 +112,26 @@ class Weather extends Component {
         }
     };
 
+    researchHandler =(lat,long)=>{
+        //console.log(lat,long);
+        this.setState({weatherData:null},()=>{
+            this.setState({lat,long},()=>{
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.long}&appid=39754004f543a6ef6f5c355f0a252248`)
+                                .then((result)=>{
+                                       // console.log(result);
+                                        this.setState({
+                                            city:result.data.name,
+                                            weatherData:result.data
+                                        });
+                                    })
+                                .catch((error)=>{
+                                        console.log(error);
+                                    });
+            })
+        })
+        
+    };
+
     render() {
         return (
             <div className='container p-5'>
@@ -131,6 +151,7 @@ class Weather extends Component {
                 weatherData={this.state.weatherData}
                 isSearched={this.state.isSearched}
                 recent={this.state.recent}
+                research={this.researchHandler}
                 >
 
                 </ReasultWeather>
