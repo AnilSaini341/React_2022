@@ -11,7 +11,22 @@ class Weather extends Component {
             long:"",
             city:"",
             weatherData:null,
+            isSearched:false,
+            recent:[],
         };
+    }
+
+    addDatatoRecent = () =>{
+        console.log(this.state);
+        let recent= this.state.recent;
+        recent.push({
+            lat:this.state.lat,
+            long:this.state.long,
+            city:this.state.city,
+        });
+        this.setState({ recent },()=>{
+            console.log(this.state);
+        });
     }
 
     changeHandler=(event)=>{
@@ -34,12 +49,18 @@ class Weather extends Component {
     };
 
     searchHandler = () =>{
+        this.setState({
+            weatherData:null,
+            isSearched:true,
+        });
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.long}&appid=39754004f543a6ef6f5c355f0a252248`)
                             .then((result)=>{
                                    // console.log(result);
                                     this.setState({
                                         city:result.data.name,
                                         weatherData:result.data
+                                    }, ()=>{
+                                        this.addDatatoRecent();
                                     });
                                 })
                             .catch((error)=>{
@@ -53,6 +74,7 @@ class Weather extends Component {
             long:"",
             city:"",
             weatherData:null,
+            isSearched:true,
         });
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(
@@ -69,6 +91,8 @@ class Weather extends Component {
                                     this.setState({
                                         city:result.data.name,
                                         weatherData:result.data
+                                    }, ()=>{
+                                        this.addDatatoRecent();
                                     });
                                 })
                             .catch((error)=>{
@@ -105,6 +129,8 @@ class Weather extends Component {
 
                 <ReasultWeather 
                 weatherData={this.state.weatherData}
+                isSearched={this.state.isSearched}
+                recent={this.state.recent}
                 >
 
                 </ReasultWeather>
