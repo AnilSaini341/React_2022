@@ -34,7 +34,7 @@ class Weather extends Component {
     };
 
     searchHandler = () =>{
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.lat}&appid=39754004f543a6ef6f5c355f0a252248`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.long}&appid=39754004f543a6ef6f5c355f0a252248`)
                             .then((result)=>{
                                    // console.log(result);
                                     this.setState({

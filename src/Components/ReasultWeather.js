@@ -17,7 +17,7 @@ function ReasultWeather(props) {
             <div className='col'>
                 <div className='card border-primary'>
                     <div className='card-body'>
-                         <div className='text-center'>Loading...</div>
+                         <div className='text-center'>Loading <i className="fa fa-spinner fa-spin mt-2" aria-hidden="true"></i></div>
                          </div>
             </div>
             </div>
